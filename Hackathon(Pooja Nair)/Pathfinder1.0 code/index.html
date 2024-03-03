@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Recommendation System</title>
+</head>
+<body>
+    <h1>Career Recommendation System</h1>
+    <form method="POST">
+        <label for="hobbies">Hobbies:</label>
+        <input type="text" id="hobbies" name="hobbies" required><br><br>
+        <label for="interests">Interests:</label>
+        <input type="text" id="interests" name="interests" required><br><br>
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills" name="skills" required><br><br>
+        <label for="major">Major:</label>
+        <input type="text" id="major" name="major" required><br><br>
+        <input type="submit" value="Get Career Recommendations">
+    </form>
+    {% if recommendations %}
+        <h2>Career Recommendations:</h2>
+        <ul>
+            {% for recommendation in recommendations %}
+                <li>{{ recommendation }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
